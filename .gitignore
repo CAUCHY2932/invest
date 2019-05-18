@@ -109,6 +109,3 @@ venv.bak/
 # pycharm
 .idea
 
-# passwd folder
-/no_upload
-
