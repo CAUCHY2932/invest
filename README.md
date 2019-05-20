@@ -1,3 +1,4 @@
-# manage file
+# investment files
 
-describe management and ecnomics
+some markdown files about journal 
+
