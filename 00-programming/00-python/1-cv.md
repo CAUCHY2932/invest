@@ -1,3 +1,4 @@
+```python
 import cv2
 import time
 import numpy as np
@@ -84,5 +85,5 @@ if __name__ == "__main__":
     imgs = get_images('c:\\video\\kun.mp4', (64, 40))
     video_chars = video_2_char(imgs)
     play_video(video_chars)
-
+```
 
