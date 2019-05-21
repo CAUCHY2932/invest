@@ -6,7 +6,7 @@ conda创建环境
 conda删除环境
 
     conda remove -n py_env --all
-    
+
 conda安装第三方包
 
     conda install
@@ -14,12 +14,13 @@ conda安装第三方包
 conda查看当前的虚拟环境
 
     conda env list
-    
-    
+
+
+​    
 conda查看安装的包
-    
+​    
     conda list
-    
+
 conda切换清华源
     
     
@@ -31,12 +32,13 @@ https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/
 
 激活conda环境
 
-    win下
-    
-    source activate py_env
-    source deactivate
-    
-    mac下
-    conda activate py_env
-    conda deactivate
-    
+```bash
+win下
+
+source activate py_env
+source deactivate
+
+mac下
+conda activate py_env
+conda deactivate
+```
