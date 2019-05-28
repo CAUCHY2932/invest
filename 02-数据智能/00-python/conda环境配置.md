@@ -19,7 +19,7 @@ conda查看当前的虚拟环境
 ​    
 conda查看安装的包
 ​    
-    conda list
+​    conda list
 
 conda切换清华源
     
