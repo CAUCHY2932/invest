@@ -287,7 +287,34 @@ $ cd /etc/alternatives/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/
 
 rpm -qa | grep openssh-server
 systemctl start sshd
+# ifconfig命令不存在
+sudo yum install net-tools
+在安装的时候选择 网络部分，网络地址转换(NAT) 模式，安装好之后 ：
+这里宿主机是win7，ip是192.168.52.238  虚拟机ip为10.0.2.15  我们用端口40001来转发虚拟机的22端口 
 
+设置好之后就能在宿主机里用 sercurecrt 登陆虚拟机了
+
+用这种方式，虚拟机既能访问外网，主机又能ssh上去管理虚拟机，而且最重要的是虚拟机在局域网环境内不需要再分配独立的ip（用主机的ip加指定端口）
+
+同样的，在虚拟机里也能通过ssh 访问宿主机同网段的其他机器
+
+在本机ssh远程
+ssh root@本机ip -p 40001
+
+# centos 没有pip
+pip在centos也没有，所以网上找来资料，3条语句就搞定啦！
+
+1。查看是否安装依赖包，没安装先安装：
+
+yum install epel-release
+
+2。更新文件库
+
+yum -y update
+
+3。安装pip
+
+yum -y install python-pip
 ```
 
 # 3.vim
