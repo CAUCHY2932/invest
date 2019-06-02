@@ -565,6 +565,12 @@ source ~/.zshrc
 -p # 表示端口映射，前者是宿主机端口，后者是容器内的映射端口。可以使用多个-p 做多个端口映射
 -e # 为容器设置环境变量
 --network=host # 表示将主机的网络环境映射到容器中，容器的网络与主机相同
+###########
+docker ps -a # docker 列举容器
+docker stop container id # docker 关闭容器
+docker start container id # docker 启动容器
+docker cp sourcepath containerId:targetpath # 复制文件
+
 ```
 
 
@@ -978,4 +984,17 @@ ssh-keygen -t rsa -C "youremail@example.com"
 
 git push origin master
 ```
+
+# superset
+
+```bash
+docker search superset # docker 查找镜像
+docker pull amancevice/superset # 拉取镜像
+docker images # 查看镜像
+docker run -d -p 8087:8088 -v /Users/young/super:/home/superset amancevice/superset # -v指定本地目录，冒号后面为容器内自动创建的目录
+docker exec -it bi superset-init # bi替换为id或是容器名，初始化superset
+docker exec -it bi superset load_examples # 载入示例数据（可选）
+```
+
+
 
