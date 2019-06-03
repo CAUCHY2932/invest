@@ -1,7 +1,7 @@
 ## python
 
 
-anaconda安装python及其学习教程
+### python方向和工具
 
 | 方向     |      工具       |           包 | 包管理方式 |
 | -------- | :-------------: | -----------: | ---------- |
@@ -10,7 +10,7 @@ anaconda安装python及其学习教程
 | 爬虫     |     pycharm     |       scrapy | pip,conda  |
 | web      |     pycharm     |        flask | pip,conda  |
 
-服务器部署常用镜像源
+### 服务器部署常用镜像源
 
 | 名字    | 源                                    |
 | ------- | ------------------------------------- |
@@ -18,8 +18,11 @@ anaconda安装python及其学习教程
 | 清华    | https://mirrors.tuna.tsinghua.edu.cn/ |
 | 中科大  | https://mirrors.ustc.edu.cn/          |
 | 豆瓣    | http://pypi.doubanio.com/simple/      |
+
+
+### python运维相关内容
 ```bash
-# python运维相关内容
+
 # conda使用
 conda create -n py_env python=python_version # conda创建环境
 conda remove -n py_env --all # conda删除环境
@@ -39,8 +42,10 @@ conda deactivate
 
 pip freeze > requirement.txt # 冻结包
 pip install -r requirement.txt # 可以安装所有指定的包
+```
 
-# conda配置数据分析环境
+#### conda配置数据分析环境
+```bash
 conda create -n xxx python=3.6.8
 conda install numpy=1.16.2
 conda install pandas=0.24.2
@@ -54,8 +59,10 @@ pip install -i https://pypi.doubanio.com/simple dash==0.39.0
 pip install -i https://pypi.doubanio.com/simple dash-daq==0.1.0
 pip install -i https://pypi.doubanio.com/simple plotly_express==0.1.3
 pip install -i https://pypi.doubanio.com/simple pymysql==0.9.3
+```
+#### python爬虫环境配置
 
-# python 爬虫环境配置
+```bash
 conda install scrapy=1.5.2
 conda install requests=2.21.0
 pip install -i https://pypi.doubanio.com/simple pillow==6.0.0
@@ -67,7 +74,10 @@ conda install requests
 conda install xxx
 conda install bs4
 
-# web开发
+```
+
+#### web开发
+```bash
 conda install flask
 conda install django
 conda install pymysql
@@ -76,6 +86,10 @@ conda install pymongo
 ### 运维
 
 
+```
+
+#### gui开发
+```
 ## python gui开发
 
 pycharm和pyqt5
@@ -108,6 +122,10 @@ directory： $FileDir $
 
 完成之后可以在pycharm中的外部工具打开qtdesigner
 生成的ui文件必须是在工程文件的根目录中，然后使用pyuic生成Python文件
+```
+### mac配置pip
+```bash
+
 
 ## python mac配置pip
 

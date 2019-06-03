@@ -1,39 +1,38 @@
 ## centos
 
+### 1.centos7安装python3以及jupyter
 ```bash
-
-
-# centos7相关
-
-## 1.centos7安装python3以及jupyter
-
-### 1.1centos7安装python3
-
+# 1.1centos7安装python3
 wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sudo sh ./Miniconda3....
 conda create -n jupyter
 conda activate jupyter
 
+```
+
+
+
 ### 1.2设置pip镜像源
 
-#### 1.2.1 直接使用pip安装
-
+```bash
+# 1.2.1 直接使用pip安装
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ xxx
 
 numpy pandas 
-
 
 #### 1.2.2 设置永久镜像源
 
 cat > ~/.pip/pip.conf
 
-文件内容如下：
-
+#文件内容如下：
 [global]
 index-url = http://mirrors.aliyun.com/pypi/simple/
 [install]
 trusted-host = mirrors.aliyun.com
+```
 
+### 安装jupyter lab
+```bash
 pip install jupyterlab
 
 Consider using the `--user` option or check the permissions
@@ -67,7 +66,22 @@ c.ContentsManager.root_dir = '/data/jupyter/root'
 
 c.NotebookApp.allow_remote_access = True
 
-防火墙开放8888端口
+```
+### 端口操作
+
+```
+# centos7开启端口
+
+添加端口
+firewall-cmd --zone=public --add-port=80/tcp --permanent # 添加端口 
+firewall-cmd --reload # 重新载入端口
+查看
+firewall-cmd --zone= public --query-port=80/tcp
+删除
+firewall-cmd --zone= public --remove-port=80/tcp --permanent
+
+
+# 防火墙开放8888端口
 
 firewall-cmd --zone=public --add-port=8888/tcp --permanent
 systemctl restart firewalld.service
@@ -83,6 +97,25 @@ http://服务器ip地址:8888/lab
 
 10.10.10.100:8888/lab
 
+```
+### ssh
+
+```bash
+rpm -qa | grep openssh-server
+systemctl start sshd
+# ifconfig命令不存在
+sudo yum install net-tools
+在安装的时候选择 网络部分，网络地址转换(NAT) 模式，安装好之后 ：
+这里宿主机是win7，ip是192.168.52.238  虚拟机ip为10.0.2.15  我们用端口40001来转发虚拟机的22端口 
+
+设置好之后就能在宿主机里用 sercurecrt 登陆虚拟机了
+
+用这种方式，虚拟机既能访问外网，主机又能ssh上去管理虚拟机，而且最重要的是虚拟机在局域网环境内不需要再分配独立的ip（用主机的ip加指定端口）
+
+同样的，在虚拟机里也能通过ssh 访问宿主机同网段的其他机器
+
+在本机ssh远程
+ssh root@本机ip -p 40001
 
 ### 2.1关闭ssh服务
 
@@ -91,7 +124,9 @@ systemctl stop sshd
 ### 2.2禁止自动启动
 
 system disable sshd
-
+```
+### docker
+```bash
 4、安装需要的软件包， yum-util 提供yum-config-manager功能，另外两个是devicemapper驱动依赖的
 
 $ sudo yum install -y yum-utils device-mapper-persistent-data lvm2
@@ -135,18 +170,12 @@ $ sudo yum erase docker-common-2:1.12.6-68.gitec8512b.el7.centos.x86_64
 
 3、再次安装docker
 $ sudo yum install docker-ce
-## centos7开启端口
 
-添加端口
-firewall-cmd --zone=public --add-port=80/tcp --permanent # 添加端口 
-firewall-cmd --reload # 重新载入端口
-查看
-firewall-cmd --zone= public --query-port=80/tcp
-删除
-firewall-cmd --zone= public --remove-port=80/tcp --permanent
+```
 
-## wifi连接
 
+### wifi连接
+```bash
 一：所用命令
 dmesg | grep firmware（看看有没有来自无线网卡的固件请求）
 iw：
@@ -210,8 +239,13 @@ firmware: requesting iwlwifi-5000-1.ucode
 
 如果分配有ip，即可上网，也可以有ping直接测试
 
-## Linux下 is not in the sudoers file
+```
 
+
+
+### Linux下 is not in the sudoers file
+
+```bash
 xxx is not in the sudoers file. This incident will be reported
 
 解决办法
@@ -228,9 +262,10 @@ $ su – root
 user ALL=(ALL) ALL
 
 这里使用/root可以快速定位
+```
 
-## 查找centos7的openjdk
-
+### 查找centos7的openjdk
+```
 # which java
 
 # cd /usr/lib/jvm
@@ -253,27 +288,11 @@ $ ls -lrt /etc/alternatives/java
 /etc/alternatives/java -> /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/jre/bin/java
 
 $ cd /etc/alternatives/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/
+```
 
+### centos 没有pip
 
-### 启动ssh服务
-
-rpm -qa | grep openssh-server
-systemctl start sshd
-# ifconfig命令不存在
-sudo yum install net-tools
-在安装的时候选择 网络部分，网络地址转换(NAT) 模式，安装好之后 ：
-这里宿主机是win7，ip是192.168.52.238  虚拟机ip为10.0.2.15  我们用端口40001来转发虚拟机的22端口 
-
-设置好之后就能在宿主机里用 sercurecrt 登陆虚拟机了
-
-用这种方式，虚拟机既能访问外网，主机又能ssh上去管理虚拟机，而且最重要的是虚拟机在局域网环境内不需要再分配独立的ip（用主机的ip加指定端口）
-
-同样的，在虚拟机里也能通过ssh 访问宿主机同网段的其他机器
-
-在本机ssh远程
-ssh root@本机ip -p 40001
-
-# centos 没有pip
+```bash
 pip在centos也没有，所以网上找来资料，3条语句就搞定啦！
 
 1。查看是否安装依赖包，没安装先安装：

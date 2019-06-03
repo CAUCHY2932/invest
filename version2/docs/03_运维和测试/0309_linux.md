@@ -1,4 +1,7 @@
 ## linux
+
+### linux命令
+
 ```bash
 # linux命令-用户、权限管理
 useradd xxx # 增加一个用户
@@ -6,6 +9,7 @@ userdel -rf xxx # 删除一个用户
 whoami ## 查看当前用户
 who ## 查看当前登录用户
 exit ## 退出登录账户
+
 
 ## 添加用户账号
 useradd [参数] 新建用户账号
@@ -47,7 +51,10 @@ groupdel 删除组账号
 
 # 修改用户所在组
 usermod
+```
 
+### 系统管理
+```bash
 ## linux命令-系统管理
 # 查询端口
 netstat -tulpn ### 查询端口
@@ -56,6 +63,10 @@ lsof -i:9090
 # 查询进程
 ps -ef | grep xxx # 查询进程
 ps aux | grep xxx
+
+```
+### 文件和目录操作
+```bash
 
 # 文件与目录操作
 cp -r sourcePath targetPath # 复制文件
@@ -92,8 +103,9 @@ scp -r root@10.10.10.10:/opt/soft/mongodb /opt/soft/
 scp /opt/soft/nginx-0.5.38.tar.gz root@10.10.10.10:/opt/soft/scptest
 上传本地目录到远程机器指定目录
 scp -r /opt/soft/mongodb root@10.10.10.10:/opt/soft/scptest
-
-
+```
+### 文本操作
+```bash
 ### 重定向命令
 
 ls > test.txt # 如果不存在，则创建，存在则覆盖其内容
@@ -125,7 +137,9 @@ find ./ -size +2M 查找在当前目录下大于2M的文件
 find ./ -size -2M 查找在当前目录下小于2M的文件
 find ./ -size +4k -size -5M 查找在当前目录下大于4K，小于5M的文件
 
-
+```
+### 压缩解压
+```bash
 # 归档管理
 
 tar
@@ -169,8 +183,5 @@ zip [-r] 目标文件（没有扩展名） 源文件
 unzip -d 解压后目录文件 压缩文件
 
 # 查看命令位置 which
-
 which ls
-
-
 ```
