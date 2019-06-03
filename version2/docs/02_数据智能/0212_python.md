@@ -1,3 +1,5 @@
+[TOC]
+
 ## cv
 
 
@@ -260,6 +262,27 @@ a=a×a.
 pip install sqlalchemy psycopg2
 ```
 
+#### mac安装
+
+```bash
+pip install psycopg2-binary # 这里psy直接装是有问题的，可以这样装
+```
+
+
+
 ### 准备工作
 
-jlj
+- 文档
+
+> https://www.programcreek.com/python/example/82340/sqlalchemy.dialects.postgresql.JSONB
+
+
+
+- python postgres 实例
+
+> https://blog.csdn.net/Bear_861110453/article/details/83412985
+
+- 官方文档
+
+>https://docs.sqlalchemy.org/en/13/dialects/postgresql.html#sqlalchemy.dialects.postgresql.JSONB
+
