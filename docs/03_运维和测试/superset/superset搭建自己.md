@@ -210,7 +210,7 @@ python superset runserver
 ```
 
 **创建默认角色和许可** 
-docker exec -it 容器ID superset init
+docker exec -it 容器ID superset-init
 
 ## 创建用户时出错
 
