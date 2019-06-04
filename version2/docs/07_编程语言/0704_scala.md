@@ -1,7 +1,15 @@
-    学习地址：
-    https://www.bilibili.com/video/av24631394/?p=8
-# 变量声明
-## 变量
+## 基础语法
+## spark入门
+
+>https://www.imooc.com/video/14388
+
+
+
+学习地址：
+>https://www.bilibili.com/video/av24631394/?p=8
+
+### 变量声明
+#### 变量
 ```scala
 var
 变量值可变，类型不可变
@@ -11,7 +19,6 @@ val
 
 同时也可以指定类型赋值
 注：Scala推荐val声明，var取值并不断赋值推荐var
-```
 
 实例如下：
     
@@ -55,11 +62,12 @@ for (i <- 1 to 10){
 
 
 for(i <- Array("jljo","weg","geg","cvb")) println(i)
-    
-    嵌套循环
-```scala
+
+
+嵌套循环
+
 for (i <-1 to 3;j <- 1 to 3 if (j!=i) ) println(i+10*j)
-```
+
     平常的写法
     for(){
         for(){
@@ -102,10 +110,7 @@ for (i <-1 to 3;j <- 1 to 3 if (j!=i) ) println(i+10*j)
     
     调用
     m3(f1)
+```
 
 
-​    
-​    
-# 看到第8p中，采用速看策略
-    23:10
 

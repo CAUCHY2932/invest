@@ -25,15 +25,9 @@ def has_access(f):
 	def wraps(self, *args, **kwargs):
 		permission_str = PERMISSION_PREFIX 
 
-
-
-
-
-
-
 ```
 
-## superset改写
+## superset二次开发
 
 作者：
 
@@ -202,7 +196,7 @@ class echartsMap(BaseViz):
 总结一下难点主要是在批量引用所有地图文件上，在这个点卡了比较久，而且在H5没有还没有找到好方法只能一个个引用
 然后点击切换地图的思路确实很巧妙哦~感觉在前端学习之路上有进步了小小的一点，大家也一起来试试吧
 
-## 二次开发
+
 
 ### 文件夹映射
 
@@ -210,3 +204,34 @@ class echartsMap(BaseViz):
 docker run -d -p 8087:8088 -v d:/data:/usr/local/lib amancevice/superset
 ```
 
+### 单独的echart
+
+```python
+# 地图文件被分成了三个 Python 包，分别为：
+# 全球国家地图: echarts-countries-pypkg (1.9MB)
+# 中国省级地图: echarts-china-provinces-pypkg (730KB)
+# 中国市级地图: echarts-china-cities-pypkg (3.8MB)
+
+pip install pyecharts==0.5.5 echarts-countries-pypkg echarts-china-provinces-pypkg echarts-china-cities-pypkg
+# 该版本较为稳定
+```
+
+### 新版本的pyecharts
+
+> https://pyecharts.org/#/zh-cn/intro
+>
+> https://github.com/pyecharts/pyecharts
+
+v0.5.x 和 V1 间不兼容，V1 是一个全新的版本，详见 [ISSUE#892](https://github.com/pyecharts/pyecharts/issues/892)，[ISSUE#1033](https://github.com/pyecharts/pyecharts/issues/1033)。
+
+#### V0.5.x
+
+> 支持 Python2.7，3.4+
+
+经开发团队决定，0.5.x 版本将不再进行维护，0.5.x 版本代码位于 *05x* 分支，文档位于 [05x-docs.pyecharts.org](http://05x-docs.pyecharts.org/)。
+
+#### V1
+
+> 仅支持 Python3.6+
+
+新版本系列将从 v1.0.0 开始，文档位于 [pyecharts.org](https://pyecharts.org/)。
