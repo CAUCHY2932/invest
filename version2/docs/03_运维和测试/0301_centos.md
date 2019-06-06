@@ -76,9 +76,9 @@ c.NotebookApp.allow_remote_access = True
 firewall-cmd --zone=public --add-port=80/tcp --permanent # 添加端口 
 firewall-cmd --reload # 重新载入端口
 查看
-firewall-cmd --zone= public --query-port=80/tcp
+firewall-cmd --zone=public --query-port=80/tcp
 删除
-firewall-cmd --zone= public --remove-port=80/tcp --permanent
+firewall-cmd --zone=public --remove-port=80/tcp --permanent
 
 
 # 防火墙开放8888端口
@@ -97,6 +97,16 @@ http://服务器ip地址:8888/lab
 
 10.10.10.100:8888/lab
 
+
+2、安装firewalld
+root执行 # yum install firewalld firewall-config
+ 
+3、运行、停止、禁用firewalld
+启动：# systemctl start  firewalld
+查看状态：# systemctl status firewalld 或者 firewall-cmd --state
+停止：# systemctl disable firewalld
+禁用：# systemctl stop firewalld
+ 
 ```
 ### ssh
 
@@ -307,4 +317,67 @@ yum -y update
 
 yum -y install python-pip
 
+```
+
+## 安装openjdk
+
+```bash
+
+安装jre：
+
+sudo yum install java-1.8.0-openjdk
+
+然后会有些安装提示信息，一直“y”回车就好。
+
+安装jdk：
+
+sudo yum install java-1.8.0-openjdk-devel
+
+也有些安装提示信息，一直“y”回车就好。
+
+查看jre安装情况：
+
+java -version
+
+显示：
+
+openjdk version "1.8.0_181"
+OpenJDK Runtime Environment (build 1.8.0_181-b13)
+OpenJDK 64-Bit Server VM (build 25.181-b13, mixed mode)
+
+查看jdk安装情况：
+
+javac -version
+
+显示：
+javac 1.8.0_181
+
+
+2.配置环境变量。
+
+运行命令：vim  /etc/profile
+
+会提示文件已存在，输入“e”回车。
+
+编辑文件，在最后加上：
+
+#Java
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64
+export CALSSPATH=$JAVA_HOME/lib/*.*
+export PATH=$PATH:$JAVA_HOME/bin 
+
+然后键盘按下“Esc”，再按下“：”双引号，输入wq回车保存退出vim编辑模式。
+
+最后需要：
+
+source  /etc/profile
+
+使修改生效。
+
+其中/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64是你的jdk的默认安装路径。
+--------------------- 
+作者：yzh_1346983557 
+来源：CSDN 
+原文：https://blog.csdn.net/yzh_1346983557/article/details/81509329 
+版权声明：本文为博主原创文章，转载请附上博文链接！
 ```
