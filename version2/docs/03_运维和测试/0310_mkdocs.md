@@ -21,7 +21,7 @@ mkdocs serve
 ### 安装第三方主题
 
 ```bash
-pip install mkdocs-material
+pip install material
 theme: material
 ```
 
