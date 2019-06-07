@@ -3,6 +3,8 @@
 ### 1.centos7安装python3以及jupyter
 ```bash
 # 1.1centos7安装python3
+# https://docs.conda.io/en/latest/miniconda.html
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sudo sh ./Miniconda3....
 conda create -n jupyter

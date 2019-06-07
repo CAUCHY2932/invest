@@ -1,6 +1,7 @@
 ## mkdocs
 
-安装mkdocs
+### 安装mkdocs
+
 ```bash
 # 安装mkdocs
 pip install mkdocs
@@ -16,3 +17,11 @@ theme: readthedoc
 # 启动
 mkdocs serve
 ```
+
+### 安装第三方主题
+
+```bash
+pip install mkdocs-material
+theme: material
+```
+
