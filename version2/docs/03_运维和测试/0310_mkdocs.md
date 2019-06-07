@@ -25,3 +25,10 @@ pip install material
 theme: material
 ```
 
+### 后台启动并指定端口
+
+```bash
+nohup mkdocs serve --dev-addr 10.0.18.19:8000 &
+nohup mkdocs serve --dev-addr 0.0.0.0:8000 & # 全网指定端口
+```
+

@@ -71,7 +71,7 @@ c.NotebookApp.allow_remote_access = True
 ```
 ### 端口操作
 
-```
+```bash
 # centos7开启端口
 
 添加端口
@@ -108,7 +108,9 @@ root执行 # yum install firewalld firewall-config
 查看状态：# systemctl status firewalld 或者 firewall-cmd --state
 停止：# systemctl disable firewalld
 禁用：# systemctl stop firewalld
- 
+
+# 启动时自动开启
+systemctl enable firewalld
 ```
 ### ssh
 
