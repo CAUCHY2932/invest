@@ -2,6 +2,8 @@
 
 ### linux命令
 
+> http://www.magedu.com/74163.html?linux_wenzhang_zhihu_jinke_tiaocaobibei40ti_33967414
+
 ```bash
 # linux命令-用户、权限管理
 useradd xxx # 增加一个用户
