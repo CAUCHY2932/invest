@@ -44,3 +44,18 @@ deb-src https://mirrors.ustc.edu.cn/ubuntu/ cosmic-security main restricted univ
 deb https://mirrors.ustc.edu.cn/ubuntu/ cosmic-proposed main restricted universe multiverse 
 deb-src https://mirrors.ustc.edu.cn/ubuntu/ cosmic-proposed main restricted universe multiverse
 ```
+
+## 安装mysql
+
+>https://blog.csdn.net/weixx3/article/details/80782479
+
+```bash
+sudo apt install mysql-client-core-5.7 
+sudo apt install mysql-server
+sudo mysql_secure_installation
+密码1234
+sudo mysql -uroot -p # 无需密码正确
+
+GRANT ALL PRIVILEGES ON *.* TO root@localhost IDENTIFIED BY "123456";
+```
+
