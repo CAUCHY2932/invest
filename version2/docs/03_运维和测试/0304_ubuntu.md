@@ -63,5 +63,13 @@ GRANT ALL PRIVILEGES ON *.* TO root@localhost IDENTIFIED BY "123456";
 
 ```bash
 sudo apt-get install docker.io
+sudo docker search superset
+sudo docker pull amancevice/superset
+sudo docker image ls
+mkdir -p opt\docker\superset
+docker run -d -p 8087:8088 -v /opt/docker/superset:/home/superset amancevice/superset
+sudo docker container ls
+docker exec -it bi superset-init # bi替换为id或是容器名，初始化superset
+docker exec -it bi superset load_examples # 载入示例数据（可选）
 ```
 

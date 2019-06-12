@@ -134,7 +134,7 @@ docker exec -it 容器ID superset db upgrade
 
 ### 1.创建本地映射文件夹。
 
-    mkdir opt\docker\superset
+    mkdir -p opt\docker\superset
 
 ### 2.创建superset容器
 
