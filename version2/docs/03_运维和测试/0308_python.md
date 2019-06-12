@@ -138,3 +138,68 @@ index-url=http://mirrors.aliyun.com/pypi/simple/
 trusted-host=mirrors.aliyun.com
 
 ```
+
+## python pylint
+
+python安装目录下scripts/pylint.exe
+
+arguments: --output-format=parseable --disable=R -rn --msg-template="{abspath}:{line}: [{msg_id}({symbol}), {obj}] {msg}" $FilePath$
+
+- working firectory: $FileDir$
+
+## python安装
+
+- python安装
+
+- - 使用anaconda安装
+  - 使用homebrew
+  - brew       install python3
+
+- mongodb安装
+
+- - 使用homebrew
+  - brew       install mongodb
+  - 安装之后的验证，输入mongod，即可启动服务，输入mongo进入到mongobd到命令行的界面
+  - brew       services start mongodb
+  - mongo
+
+- redis安装
+
+- - brew       install redis
+  - redis-cli
+  - set       'a' 'b'
+  - get 'a'
+  - 如果出错，就在终端里进行修改cd       /usr/local/etc/
+  -  
+  - command+shift+g，然后cd       /usr/local/etc，之后再使用文本编辑器打开redis.conf
+  - redis-server       ./redis.conf
+  - redis-cli
+  - brew       services restart redis
+  - 可以在配置文件里添加密码
+
+- mysql环境安装
+
+- - brew       install mysql
+
+  - 就会进行安装
+
+  - mysqld
+
+  - - ==>        Pouring mysql-8.0.12.high_sierra.bottle.tar.gz
+    - ==>        Caveats
+    - We've        installed your MySQL database without a root password. To secure it run:
+    - mysql_secure_installation
+    - MySQL        is configured to only allow connections from localhost by default
+    - To        connect run:
+    - mysql        -uroot
+    - To        have launchd start mysql now and restart at login:
+    - brew        services start mysql
+    - Or,        if you don't want/need a background service you can just run:
+    - mysql.server        start
+    - ==>        Summary
+    - 🍺         /usr/local/Cellar/mysql/8.0.12: 255 files, 233.0MB
+    - AppledeMacBook-Pro:~        apple$ß
+    - mysql8.0版本加密方式改变了，所以需要修改设置
+    - ALTER        USER 'root'@'localhost' IDENTIFIED BY 'password' PASSWORD EXPIRE NEVER;
+    - FLUSH        PRIVILEGES;
+    - alter        user 'root'@localhost        identified with mysql_native_password by '12345678';

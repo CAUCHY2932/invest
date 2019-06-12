@@ -187,3 +187,50 @@ unzip -d 解压后目录文件 压缩文件
 # 查看命令位置 which
 which ls
 ```
+
+## 查看当前日历
+
+cal
+-y 显示整年日历
+
+## 显示或设置时间
+
+date
+date [MMDDhhmm[[CC]YY[.ss]]+format
+CC为年前两位yy为年的后两位
+前两位的mm为月，后两位的mm为分钟，dd为天，hh为小时，ss为秒。如： date 010203042016.55
+显示时间格式
+（date '+%y,%m,%d,%H,%M,%S'）
+
+## 查看进程信息
+
+ps process status
+-a 显示终端上的所有进程，包括其他用户的进程
+-u 显示进程的详细状态
+-x 显示没有控制终端的进程
+-w 显示加宽，以便显示更多的信息
+-r 只显示正在运行的进程
+常用的为
+ps -aux
+
+
+
+## 动态显示进程
+
+top 加上-d可以指定显示信息更新的时间间隔
+执行top命令之后，可以按下按键得到对显示结果进行排序
+M 根据内存使用量来排序
+
+## 终止进程
+
+kill
+kill [-signal] pid
+
+## 关机重启
+
+reboot 重新启动操作系统
+shutdown -r now 重新启动操作系统，shutdown会给别的用户提示
+shutdown -h now 立刻关机，其中now相当于时间为0的状态
+shutdown -h 20:25
+init
+

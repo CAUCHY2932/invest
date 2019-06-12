@@ -59,3 +59,9 @@ sudo mysql -uroot -p # 无需密码正确
 GRANT ALL PRIVILEGES ON *.* TO root@localhost IDENTIFIED BY "123456";
 ```
 
+## 安装docker
+
+```bash
+sudo apt-get install docker.io
+```
+
