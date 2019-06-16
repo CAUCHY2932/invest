@@ -3,7 +3,7 @@
 ```bash
 
 # 1.端口操作
-sudo ufw status|start  # 查看端口开启情况
+sudo ufw status  # 查看端口开启情况
 sudo ufw allow 80  # 打开80端口
 sudo ufw enable  # 防火墙开启开机自启
 sudo ufw reload  # 防火墙重启
@@ -62,14 +62,23 @@ GRANT ALL PRIVILEGES ON *.* TO root@localhost IDENTIFIED BY "123456";
 ## 安装docker
 
 ```bash
+# 配置镜像站
+curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f1361db2.m.daocloud.io
 sudo apt-get install docker.io
 sudo docker search superset
 sudo docker pull amancevice/superset
 sudo docker image ls
-mkdir -p opt\docker\superset
+mkdir -p /opt/docker/superset
 docker run -d -p 8087:8088 -v /opt/docker/superset:/home/superset amancevice/superset
 sudo docker container ls
 docker exec -it bi superset-init # bi替换为id或是容器名，初始化superset
 docker exec -it bi superset load_examples # 载入示例数据（可选）
+```
+
+## 安装ssh
+
+```bash
+sudo apt install openssh-server
+
 ```
 
