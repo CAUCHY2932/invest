@@ -862,52 +862,71 @@ https://wiki.centos.org/FrontPage
 
 https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/
 
-1.配置yum源
+### 1.配置yum源
 1.1下载mysql源安装包
 在MySQL官网中下载YUM源rpm安装包：http://dev.mysql.com/downloads/repo/yum/ 
 
 https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/
 安装mysql57
-
+```bash
 wget http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
-
+```
 安装MySQL源
+```bash
 yum localinstall mysql57-community-release-el7-8.noarch.rpm
+```
 检查mysql源是否安装成功
+```bash
 yum repolist enabled | grep "mysql.*-community.*"
+```
 或者是
+```bash
 yum repolist enabled | grep mysql.*
+```
 可以修改vim /etc/yum.repos.d/mysql-community.repo源，改变默认安装的mysql版本。比如要安装5.6版本，将5.7源的enabled=1改成enabled=0。然后再将5.6源的enabled=0改成enabled=1即可。改完之后的效果如下所示： 
 
 2.安装mysql
+```bash
 yum install mysql-community-server
+```
 3.启动mysql服务
+```bash
 systemctl start mysqld
-centos7 sudo systemctl start mysqld.service
+sudo systemctl start mysqld.service
+```
 查看状态
 centos7中常用
+```bash
 sudo systemctl status mysqld.service
 sudo service mysqld status
+```
 4.开机启动
+```bash
 systemctl enable mysqld
 systemctl daemon-reload
+```
 5、修改root本地登录密码
 mysql安装完成之后，在/var/log/mysqld.log文件中给root生成了一个默认密码。通过下面的方式找到root默认密码，然后登录mysql进行修改：
-
+```bash
 shell> grep 'temporary password' /var/log/mysqld.log
-
+```
 进入mysql并修改密码
+```bash
 mysql -uroot -p
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass4!';
+```
 6.添加远程登录用户
 默认只允许root帐户在本地登录，如果要在其它机器上连接mysql，必须修改root允许远程连接，或者添加一个允许远程连接的帐户，为了安全起见，我添加一个新的帐户：
+```bash
 CREATE USER 'finley'@'%' IDENTIFIED BY 'password';
 
 GRANT ALL PRIVILEGES ON *.* TO 'finley'@'%' WITH GRANT OPTION;
-
+```
 下面是全部语句
+```bash
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'yangxin'@'%' IDENTIFIED BY 'Yangxin0917!' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
+```
 7、配置默认编码为utf8
 
 修改/etc/my.cnf配置文件，在[mysqld]下添加编码配置，如下所示：
@@ -928,11 +947,13 @@ socket文件：/var/run/mysqld/mysqld.pid
 systemctl restart mysql
 
 mysql服务命令
+```bash
+# service 命令和systemctl优先考虑systemctl
 service mysqld stop
 service mysqld start
 service mysqld restart
 service mysqld status
-
+```
 ## centos7开启防火墙
 
 1、firewalld的基本使用
