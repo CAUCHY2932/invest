@@ -82,3 +82,36 @@ sudo apt install openssh-server
 
 ```
 
+## 安装jdk
+
+```bash
+sudo apt install openjdk-8-jdk-headless
+```
+
+
+
+
+
+## 更改root密码
+
+```bash
+sudo passwd root
+```
+
+## sudo命令执行慢
+
+解决 Ubuntu 下 sudo 命令执行速度慢的问题
+1、首先如果当用登录的用户名不在"/etc/sudoers"文件中，是不能执行sudo命令的。可以用root身份手动修该文件，把当前登录用户名加入该文件中。
+2、用"hostname "命令查看当前主机的主机名称。例如，该命令返回"yzh ".
+3、用vi打开"/etc/hosts"文件，并将"ubuntu"加入到 "127.0.0.1"这行中。
+例如：
+127.0.0.1       localhost      ubuntu
+这个问题是最近装Ubuntu Server 18.04 LTS时遇到的，之前用Ubuntu Server 16.04 LTS并没有发现这个问题.
+
+症状：sudo速度非常慢，提交命令之后大概需要10秒左右才有输入sudo密码或者开始运行。su命令症状相同。
+
+原因：Ubuntu Server被设计成一种类似于分布式的操作系统网结构，允许/etc/sudoers中的成员不在本机上。从而sudo时会先从网络上寻找可能的sudoer然后才是本地. 而这10s左右的时间就是整个DNS流程的最长时间.
+
+解决方案：首先输入hostname，得到本机当前的互联网名称（大概跟windows下的计算机名称差不多）。然后使用su或sudo打开/etc/hosts，添加一行：
+
+127.0.0.1<TAB>计算机名<TAB>计算机名.localdomain
