@@ -1361,3 +1361,34 @@ http://sourceforge.net/projects/xming/files/latest/download
 3.默认登录到root用户更好使用
 4.注意执行脚本
 5.创建密码注意，大写字母，小写字母，和数字
+
+
+
+
+
+## 安装npm
+
+```bash
+wget https://npm.taobao.org/mirrors/node/v8.0.0/node-v8.0.0-linux-x64.tar.xz
+tar -xvf  node-v8.0.0-linux-x64.tar.xz
+mv node-v8.1.4-linux-x64 node
+vim /etc/profile
+
+
+
+
+```
+
+### 文件最后添加
+
+```
+#set for nodejs  
+export NODE_HOME=/usr/local/node  
+export PATH=$NODE_HOME/bin:$PATH
+```
+
+### 保存退出后执行更新命令
+
+```
+source /etc/profile
+```

@@ -234,3 +234,10 @@ shutdown -h now 立刻关机，其中now相当于时间为0的状态
 shutdown -h 20:25
 init
 
+## 传输文件
+
+```powershell
+.\pscp.exe root@129.28.189.50://root/git_repos/superset.tar.gz ./
+```
+
+

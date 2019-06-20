@@ -758,5 +758,23 @@ docker run hello-world
 
 
 
+https://blog.csdn.net/dzhmjl3/article/details/87877662
+
+## 27版本
+
+https://github.com/apache/incubator-superset/commit/7a7c12be4cede48dcc8349ad90f0209a9a201ef3
+
+```bash
+git reset --hard 7a7c12be4cede48dcc8349ad90f0209a9a201ef3
+```
+
+## 二次开发
+
+
+
+superset\assets> npm install echarts
+
+pscp.ext -r xx:xx  ./
+
 
 
