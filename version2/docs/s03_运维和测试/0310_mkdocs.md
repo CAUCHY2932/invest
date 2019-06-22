@@ -307,3 +307,5 @@ mkdocs-material本身还支持如下功能：
 如果想让自己所写的markdown发布到web服务器，例如GitHub Pages、自己搭建的HTTP Server，那么可以考虑使用本文所介绍的语法，以实现丰富多样的渲染效果。
 
 笔者建议：尽量使用传统语法，只在必要时候才使用本文介绍的语法。因为排版简洁、条理清晰才能带来最舒服的阅读感受。
+
+https://blog.51cto.com/cyent/2351243?source=dra
