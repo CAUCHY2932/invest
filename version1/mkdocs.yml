@@ -1,5 +1,0 @@
-site_name: young's records
-nav:
-    - home: index.md
-theme: material
-# theme: readthedocs
