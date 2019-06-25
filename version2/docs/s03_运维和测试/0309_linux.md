@@ -240,4 +240,9 @@ init
 .\pscp.exe root@129.28.189.50://root/git_repos/superset.tar.gz ./
 ```
 
+## 查看有多少行文件
+
+```bash
+ls | nl
+```
 
