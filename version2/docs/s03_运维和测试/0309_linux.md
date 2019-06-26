@@ -240,4 +240,9 @@ init
 .\pscp.exe root@129.28.189.50://root/git_repos/superset.tar.gz ./
 ```
 
+## 远程命令
+
+```bash
+ssh -p 4645 root@192.168.52.12
+```
 
