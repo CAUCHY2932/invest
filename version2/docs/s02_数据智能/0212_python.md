@@ -230,3 +230,5 @@ pip install psycopg2-binary # 这里psy直接装是有问题的，可以这样�
 
 >https://docs.sqlalchemy.org/en/13/dialects/postgresql.html#sqlalchemy.dialects.postgresql.JSONB
 
+## python处理pandas
+
