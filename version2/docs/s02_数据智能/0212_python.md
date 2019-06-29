@@ -198,15 +198,15 @@ a=a×a.
 
 
 
-## python操作sqlalchemy
+## 3.python操作sqlalchemy
 
-#### 需要的包
+### 3.1需要的包
 
 ```bash
 pip install sqlalchemy psycopg2
 ```
 
-#### mac安装
+### 3.2mac安装
 
 ```bash
 pip install psycopg2-binary # 这里psy直接装是有问题的，可以这样装
@@ -214,7 +214,7 @@ pip install psycopg2-binary # 这里psy直接装是有问题的，可以这样�
 
 
 
-### 准备工作
+### 3.3准备工作
 
 - 文档
 
@@ -230,5 +230,5 @@ pip install psycopg2-binary # 这里psy直接装是有问题的，可以这样�
 
 >https://docs.sqlalchemy.org/en/13/dialects/postgresql.html#sqlalchemy.dialects.postgresql.JSONB
 
-## python处理pandas
+## 4.python处理pandas
 

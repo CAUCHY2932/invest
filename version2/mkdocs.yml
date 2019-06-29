@@ -5,8 +5,8 @@ site_name: 吕阳阳的日志小屋
 #        - 爬虫:
 #            -爬虫1:    01_爬虫/爬虫.md
             #  -爬虫1: 00_python/归约.md
-theme: material
-# theme: readthedocs
+# theme: material
+theme: readthedocs
 markdown_extensions:
   - admonition
   - codehilite:

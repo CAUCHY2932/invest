@@ -1,6 +1,6 @@
-#mkdocs设置
+## mkdocs设置
 
-## 安装
+### 安装
 ```text
 pip install mkdocs mkdocs-material
 ```
@@ -11,7 +11,7 @@ pip install mkdocs mkdocs-material
 pip install --trusted-host pypi.douban.com -i http://pypi.douban.com/simple/ mkdocs mkdocs-material
 ```
 
-## 初始化项目
+### 初始化项目
 
 ```text
 mkdocs new my-project
@@ -19,7 +19,7 @@ mkdocs new my-project
 
 会生成my-project目录，进入该目录里，可以看到默认放置了一些文件，包括mkdocs.yml，这是主配置文件
 
-## 修改主题
+### 修改主题
 
 mkdocs.yml里添加:
 
@@ -28,7 +28,7 @@ theme:
   name: material
 ```
 
-## 运行
+### 运行
 
 ```text
 # 在my-project目录里执行
@@ -38,7 +38,7 @@ mkdocs serve
 通过浏览器访问本地ip的8000端口（比如http://127.0.0.1:8000/)
 
 
-## 发布到GitHub pages
+### 发布到GitHub pages
 
 通过`mkdocs gh-deploy`自动编译出html并发布至GitHub pages，步骤如下
 
@@ -62,7 +62,7 @@ mkdocs serve
 mkdocs gh-deploy
 ```
 
-## 发布到个人HTTP Server
+### 发布到个人HTTP Server
 
 通过`mkdocs build`编译出html并手动同步至http server的根目录
 
@@ -80,7 +80,7 @@ mkdocs build
 
 将site目录里的所有东西拷贝到http server的根目录下
 
-## mkdocs.yml注意事项
+### mkdocs.yml注意事项
 
 由于是yaml格式，因此首先要符合yaml的语法要求
 
@@ -88,7 +88,7 @@ docs下需要一个index.md，作为站点首页
 
 文档层次结构虽然可以很多层，但最佳实践是控制在2层内，最多不要超过3层，否则展示会不够友好
 
-## 添加页面
+### 添加页面
 
 在my-project/docs/里放置.md文件，可以自行组织目录结构
 
@@ -110,7 +110,7 @@ nav:
 - 上面的index.md就是放置在my-project/docs/index.md
 - 上面的local.md就是放置在my-project/docs/install/local.md
 
-## 添加扩展
+### 添加扩展
 
 只有添加了扩展，才能完美使用mkdocs-material官方支持的所有markdown语法
 
@@ -144,7 +144,7 @@ markdown_extensions:
   - pymdownx.tilde
 ```
 
-## markdown语法
+### markdown语法
 
 mkdocs-material支持几十种markdown语法，有许多很酷炫的功能与效果，由于篇幅有限，无法在这一一展示，因此这里仅列举下所支持的主要语法
 
@@ -242,7 +242,7 @@ mkdocs-material支持几十种markdown语法，有许多很酷炫的功能与效
 - 列表-列表-引用
 - 引用-引用-代码
 
-## 其他功能
+### 其他功能
 
 mkdocs-material本身还支持如下功能：
 
@@ -250,7 +250,7 @@ mkdocs-material本身还支持如下功能：
 - 页面以及跳转文字的配色
 - 中文搜索
 
-## 最佳实践
+### 最佳实践
 
 如果希望自己所写的markdown可以兼容各个markdown编辑器，那么只需了解markdown的传统语法即可
 
@@ -264,7 +264,7 @@ mkdocs-material本身还支持如下功能：
 
 
 
-## 将你的wiki站点托管到GitHub
+### 将你的wiki站点托管到GitHub
 
 - 创建一个新仓库。 比如: [https://github.com/user_name/repository_name](https://link.zhihu.com/?target=https%3A//github.com/user_name/repository_name)
 - 初始化你的本地仓库（wiki）, 添加远程仓库，提交本地修改并推送到远程仓库

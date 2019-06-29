@@ -1,5 +1,3 @@
-## linux
-
 ### linux命令
 
 > http://www.magedu.com/74163.html?linux_wenzhang_zhihu_jinke_tiaocaobibei40ti_33967414
@@ -234,22 +232,26 @@ shutdown -h now 立刻关机，其中now相当于时间为0的状态
 shutdown -h 20:25
 init
 
-## 传输文件
+## scp或pscp传输文件
 
 ```powershell
+# 在windows下解压pscp，执行以下命令
 .\pscp.exe root@129.28.189.50://root/git_repos/superset.tar.gz ./
+./pscp .\finebi-20190415-product-full-bi51.tar.gz root@192.168.144.128:/root/
+
 ```
 
-<<<<<<< HEAD
+
 ## 远程命令
 
 ```bash
 ssh -p 4645 root@192.168.52.12
-=======
+```
+
 ## 查看有多少行文件
 
 ```bash
 ls | nl
->>>>>>> f1efb493c416682a09d5487123ad3cdeadd82e56
+
 ```
 

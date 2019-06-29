@@ -1,1 +1,0 @@
- ./pscp .\finebi-20190415-product-full-bi51.tar.gz root@192.168.144.128:/root/
