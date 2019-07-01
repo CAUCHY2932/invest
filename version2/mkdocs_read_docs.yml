@@ -6,23 +6,7 @@ site_name: 吕阳阳的日志小屋
 #            -爬虫1:    01_爬虫/爬虫.md
             #  -爬虫1: 00_python/归约.md
 # theme: material
-theme:
-  name: material
-  palette:
-    primary: 'Blue Grey'
-    accent: 'Pink'
-  feature:
-    tabs: true
-  #font:
-    #text: 'Ubuntu'
-    #code: 'Ubuntu Mono'
-language: 'zh'
-
-
-
-
-
-# theme: readthedocs
+theme: readthedocs
 markdown_extensions:
   - admonition
   - codehilite:
