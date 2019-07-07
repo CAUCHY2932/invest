@@ -1392,3 +1392,10 @@ export PATH=$NODE_HOME/bin:$PATH
 ```
 source /etc/profile
 ```
+
+## 设置网络
+
+```bash
+cd /etc/sysconfig/network-scripts
+```
+
